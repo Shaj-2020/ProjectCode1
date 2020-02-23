@@ -1,0 +1,278 @@
+AWS Architecture
+
+regions and availablity zones
+
+Regions -> different locations accross the world, were they are various data centers put up.
+
+For 1 regions goes more than one datacenters and these datacenters are know as Avaliablity zones.
+
+For customer can access the datacenter from any where in world.
+
+eg:- south polo have 3 availabilty zones.
+
+
+
+
+Domains of AWS
+
+1. compute 
+
+a) EC2 eleastic cloud compute-->   it has resizable compute capacity and it is a clean slate
+
+eg: if u go and buy laptop. it is a clean device where u can choose ur own OS . accordinlgly ur EC2 is a clean slate and u can do so many things on it
+
+b) Elastic Beanstalk
+
+Let you deploy ur various application in AWS. no need to worry about underlying architecture. it is very similar to EC2. only diff bw this two is Elastic beanstalk has predefined libraries where as EC2 is clean slate.
+
+
+2) Migration
+
+aws have physicall migration as well. let you can manually move the data into datacenter
+
+eg:- if i want to sent a mail to somebody i can do through internet. lets imagine if i want to give sombody a movie,instead of giving it to online i can give to someone and that person is reacable for me.so my data should be secure 
+
+
+When you talk about aws it has something called as snowball. which actually move this data phsically..
+
+3) security and compliance
+
+we have KMS -which is identification and management tool and create ur own private and public keys and keep ur system secure.
+
+
+4) Storage.
+
+We have S3 and S38 work as a bucket object kind of things. ur storage place is called as bucket and ur object which is storing is nothing but ur files. now these objects are stored in a root file which act as bucket .
+
+cloud front-content delivery network it is called as Glacier
+
+Glacier means a place were we can store archieve because it is highly affordable.
+
+
+5) Nerworking
+
+we have network like VPC, Direct connect, Route 53 which is a DNS
+
+VPC is a virtual network which actually let you move or launch resources.
+
+6) Messaging - To communicate with other parties
+
+7) Databases- Storage and databases r simillar. 
+
+storage means where u store ur executable files.
+when u r taliking about Databases various SQL options at a very faster rate
+
+Dynamo DB- is non relational DBMS
+
+
+8) Management Tools- cloud watch , which is a monitoring tool and let you set alarm
+
+
+
+INSTANCES
+--------------
+
+An instance is a virtual server for running applications on Amazon EC2. 
+
+it is also be undestood like a tiny part of large computer ,tiny part means hard drive,network conenctions, OS etc But it is actually virtual in nature
+
+
+
+You have 1 system in top of that u can run diff appln and how it works is ,if u r running a application A in part1 and Bin partB of ur server. These appl have a feeling they r running individually on that system and there is no other system running on top of it .This is a virtualization.
+
+it creates a virtual environment for your appln to run . once such instance is called as Instance.
+
+
+
+Virtualization
+-----------------
+
+it can be a simple computer whcih is shared by diff people and those people r working quiet independently on that server. this is called virtualization and each one of individual would be using a diff instance si this is what an Instances .
+
+
+EC2
+-----
+
+EC2 is an amazon web services compute service. it stands for Elastic compute cloud. it is easily resizable
+
+It is a service .Because it is highly flexible highly scalable.it is very cost efficient and it serves a lot of purposes.
+
+scalable- 5 amount of 
+
+
+1. general purpose instance - application that requires a balance of performance and cost. You need a quick response eg:- mailing
+
+2. compute instances - appln requires a lot of processing from CPU eg:- analyzing streaming data   
+
+
+3. Memory instance - appl requires more memmory or more RAM- need appln for mutitasking
+
+4. Stoarage instance- to store huge amount of dat
+
+5. GPU instance - requires heavy graphic rendering . help u to purpose like 3D modelling and stuff like that
+
+
+
+Below are diff Instance based on price
+
+OnDemand- on perticular time we can use instance. once that 1hr is completed taht instance will terminate.eg:- staying in PG for 1 month rent
+
+Dedicated- Some data we are using a space which is not shared by anyone. 
+
+On spot - there is a perticualr instance we can bid on perticular spot- volatile
+
+Reserved- suppose we r taking for rent a flat for 1yrear so no one can move from there.
+
+
+AWS compute Domain
+
+1. EC2
+2. Elastic beanstalk
+3. AWS-LAMDA
+
+
+if we upload any file in web it will move to some bucket and it will send to mail.
+
+it will show all the details about file size,name, which bucket etc
+
+EC2 is a raw server. it is like a personal computer you working on remotely. So you can support any OS which is support by aws infastucture
+
+and u can use in any manar . u can configure it become web server,worker
+
+
+2. Elastic beanstalk
+
+
+it is automated version of EC2. here u wont get access to OS. but u still have a control to the configuration. so you can choose what kind of instance you want. It is used to deploy an application. So basically u have to do ur code and application is deplyed in 
+
+
+
+my.dot.tk
+
+
+Elastic bean stack  :-  AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed 
+-------------------
+with Java, . NET, PHP, Node. js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS
+
+
+Deploy and manage applications in the AWS Cloud without worrying about the infrastructure that runs those applications with AWS 
+Elastic Beanstalk 
+
+
+It is a PaaS where you with programing language like java,dontnet,php,node.js etc on familair servers such as apache,tomcat,nginx and IIS.
+
+Paas --> where u can deploy and host ur application
+
+All u have to do is develop a proper code for ur application rest will be handeled by Elastic beanstalk
+
+2. All developers have do is concentrate on on developing code for appln
+3. rest like monitoring storage,networking etc and manging virtualization OS databases done by elasticbeanstalk
+
+
+Features
+-------
+1. fastest and simplest way to deploy ur appln on aws
+2. All developer have to concentrat on developing code rest of configuration,monitoring details,managing take care be elastic beanstalk
+3.automaticaly scales up ur appln up and down 
+4. baenstalk also provide full contraol over aws resources and u can access underlying resources at anytime
+
+
+Components
+--------
+
+ when u deploey an appl in Elasticbeanstlk, it will create sepatere folder whcihc is dedicated to ur appln . this folder is called application
+
+
+1. Application :- Am appln is a collection of componets including environmenst,versions,and environment configuration. 
+
+2. Application version:- suppose we have written a code and stored it in a file and deployed on elasticbeanstals. and appln is succesfully launched
+
+but now we want to make certain changes to the code,u go ahead open the file make the cahnges to it and save it and then agian deployed on Elasti 
+beanstalk. elastic bs successfully launched.
+
+here EBS will provide u a option where u can upload a diff version of ur appln without deleting previous one.
+
+3. Environment :- it is a place where u can actually run ur application. when u launch an EBS environment,BS starts assigning various aws resources
+like ec2 instances, auto scaling group,load balance, security group to ur appln. (at a single point of time environment can run only a single version
+of ur appl but EBS will provide u a option with were u can create multiple environment for single appln
+
+eg: i want an environment for deveoplmet stage,testing stage and production stage for our appln we can do that
+
+4. Envirmnet tire:- when u try to launch EBS environment, ebs ask u to choose amount to environment tires which are web server environment 
+and worker environment
+eg; if u want ur appl to handle Http request then u choose webserver env . And if ur apln to handle background task   then to choose work env
+
+
+health of environment
+------------------------
+beanstalk report health of ur web server environment
+
+1. grey--> ur environment is being updated
+
+2. Green --> "	passed recent health check
+
+3. yellow --> env failed one or more checks
+
+4. Red --> failed three or more check
+
+Architecture of EBS
+------------------
+
+Webserver environment tiers usually handls http request from clients and it has  diff components.
+
+1. Beanstalk Environemnt- a place were we actually run appln Beanstalk provide u with an option where we can create multiple environment,and 
+this envirmnent can run onely one version
+
+2. Eastic load balancer -> ur appl receing a lot of request ELB does it distributes all this request among different EC2 instances So no request 
+will be delayed
+
+When ur appln receives request all these requests are forwarded to elastic load balancer and this LB ditributes these request to EC2 instance of
+auto scalling group
+
+3. Auto scaling group --> if ur webs erver handling lot of traffic ,then auto scalling group   automatically install few EC2 instance simillaryl
+
+traffic is very low then it automaticlaly terminate under EC2 instances
+
+4. EC2 instances --> whenerer u launch an EBS environemnt beanstalk will assign ur application with suitable EC2 instance.
+
+eg: my enviroment as Apache tomcat container. it does it install amazon linux server,apache webserver and tomcat software on my EC2 instance
+
+5. Host manager --> which runs on every EC2 instances that has been assigned to ur appln.
+
+ a) provide ur detailsed report regarding performacne of ur appln
+
+ b) provide instant level events
+ c) monitors ur appl log files as well as application server
+
+6) security group --> like firewall to ur instance. not anybody can access ur instance.it just for security purpose
+
+
+Worker
+------
+
+1) I have a client he made request to a webserver and webserver accept the request and process the request.while processing request it will 
+take time meanwhile this client requested or send request to a webserver since webserver didnt process the 1st request it denies 2nd request.
+result of this request is performance and request accepted by a webserver drastically decrease.
+
+2 ) Alternately client is sent request webserver accept the request and start processing the request again it starts lot of time.it transfer 
+or it passes all this task to worker environment.And this worker environment will handle all these tasks and request 1 is successfully completed.
+Meanwhile if it receive request 2 since it has commpleted procesiing request1 it will accept request2
+
+ 
+
+How does the two environment communicate (Worker envirmnet vs webserver environment)
+-----------------------------------------
+
+1. client : cleinet sent a request to a webserver
+2. webserver encounter task which time consuming and resoucre consuming
+3. server passess this request to SQS queue (simple queue service)
+4. when try to install work envirmonet as a demon, which pulls out all these messages from our tasks from your SQS queue
+5. and this deamon send this task to a application.
+6. application results the task and it responds with a HTTP responds option
+7. So this is how ur two application communicate.
+
+
+
+
+
+
